@@ -41,8 +41,6 @@ gem "paperclip", "~> 4.2"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'newrelic_rpm'
-
 group :production do
   gem 'pb'
   gem 'rails_12factor'
