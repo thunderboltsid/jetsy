@@ -152,6 +152,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, RVM: ruby-2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, RVM: ruby-2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v4.1.7, RVM: ruby-2.1.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails_serve_static_assets (v0.0.3, RVM: ruby-2.1.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails_stdout_logging (v0.0.3, RVM: ruby-2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.1.7, RVM: ruby-2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, RVM: ruby-2.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.0, RVM: ruby-2.1.2) [gem]" level="application" />
