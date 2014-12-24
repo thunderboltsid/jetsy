@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 # Use autoprefixer-rails with Bootstrap to add browser vendor prefixes automatically
 gem 'autoprefixer-rails'
 
+gem 'sqlite3'
 # Use paperclip
 gem "paperclip", "~> 4.2"
 # Use ActiveModel has_secure_password
