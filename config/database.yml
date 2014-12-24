@@ -24,4 +24,4 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: db/production
+  database: jetsy
