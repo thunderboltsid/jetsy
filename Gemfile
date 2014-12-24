@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 gem 'autoprefixer-rails'
 
 # Use paperclip
-gem "paperclip", "~> 4.2"
+gem 'paperclip', '~> 4.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -40,17 +40,15 @@ gem "paperclip", "~> 4.2"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
-
-
 group :production do
-  gem 'pb'
+  gem 'pg'
   gem 'rails_12factor'
 end
 
 group :test, :development do
   gem 'sqlite3'
 end
+
 
 group :doc do
   gem 'sdoc', require: false

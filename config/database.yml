@@ -22,6 +22,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
   adapter: postgresql
-  database: jetsy
+  database: my_database_production
