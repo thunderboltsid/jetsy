@@ -14,8 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "About", pages_about_path %></li>
-        <li><%= link_to "Contact", pages_contact_path %></li>
+        <li><%= link_to 'About', pages_about_path %></li>
+        <li><%= link_to 'Contact', pages_contact_path %></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -26,14 +26,17 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><%= link_to "Change password", edit_user_registration_path  %></li>
-                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                <li><%= link_to 'New Listing', new_listing_path %></li>
+                <li><%= link_to 'My listings', seller_path  %></li>
+                <li><%= link_to 'Change password', edit_user_registration_path  %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
         <% else %>
-            <li><%= link_to "Sign in", new_user_session_path  %></li>
+            <li><%= link_to 'Sign in', new_user_session_path  %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
