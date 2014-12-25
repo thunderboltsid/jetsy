@@ -17,6 +17,7 @@
 
 # Ignore application configuration
 /config/application.yml
+/config/secrets.yml
 
 # Ignore files on development environment
 /public/system
