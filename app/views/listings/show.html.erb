@@ -6,8 +6,12 @@
   </div>
   <div class="col-md-6">
     <h3><%= @listing.name %></h3>
-    <h5><%= number_to_currency(@listing.price, :locale => :en) %></h5>
+    <h5>
+      <%= number_to_currency(@listing.price, :locale => :en) %>
+      <%= link_to 'Buy Now!', new_listing_order_path(@listing), class:'btn btn-primary' %>
+    </h5>
     <p><%= @listing.description %></p>
+
   </div>
 </div>
 
