@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://code.stripe.com'
 ruby '2.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -31,7 +32,7 @@ gem 'autoprefixer-rails'
 gem 'paperclip', '~> 4.2'
 gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'figaro'
-
+gem 'stripe'
 gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
