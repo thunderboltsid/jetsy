@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
   respond_to :html
+  require 'stripe'
 
   def sales
     @orders = Order.all.where(seller: current_user).order('created_at DESC')
@@ -14,17 +15,41 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @listing = Listing.find(params[:listing_id])
-    respond_with(@order)
+    #respond_with(@order)
   end
 
   def create
     @order = Order.new(order_params)
     @listing = Listing.find(params[:listing_id])
     @seller = @listing.user
+    @buyer = current_user
     @order.listing_id = @listing.id
-    @order.buyer_id = current_user.id
-    @order.save
-    respond_with(@order)
+    @order.buyer_id = @buyer.id
+    @order.seller_id = @seller.id
+    Stripe.api_key = ENV["STRIPE_API_KEY"]
+    begin
+      charge = Stripe::Charge.create(
+                                 :amount => (@listing.price * 100).floor,
+                                 :currency => 'eur',
+                                 :card => params[:stripeToken],
+                                 :description => "Charge for purchase on jEtsy - #{@listing.name}"
+      )
+      flash[:notice] = "Thanks for ordering a #{@listing.name}"
+    rescue Stripe::CardError => e
+      flash[:danger] = e.message
+    rescue Stripe::InvalidRequestError => e
+      flash[:danger] = e.message
+    end
+    respond_to do |format|
+      if @order.save
+        format.html {redirect_to root_url}
+        format.json {render action: 'show', status: :created, location: @order}
+      else
+        #format.html {render action: new}
+        format.html {redirect_to }
+        format.json {render json: @order.errors, status: :unprocessable_entity}
+      end
+    end
   end
 
   private

@@ -50,12 +50,10 @@ body{
   }
 }
 
-.jumbotron{
+.jumbotron-banner{
   background-image: url('https://dl.dropboxusercontent.com/s/0p5rnk675bsxn7i/jumbotron.png');
-  h1,h2{
-    font-family: guardian-egyptt, guardian-egyptt, georgia, serif;
-    font-color: #BFBFBF;
-  }
+  font-family: guardian-egyptt, guardian-egyptt, georgia, serif;
+  color: white;
 }
 
 .thumbnail{
