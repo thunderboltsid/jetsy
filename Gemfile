@@ -34,6 +34,12 @@ gem 'paperclip-dropbox', '>= 1.1.7'
 gem 'figaro'
 gem 'stripe'
 gem 'devise'
+
+#Upgrading to rails 4.2
+gem 'responders', '~> 2.0'
+gem 'newrelic_rpm'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -50,10 +56,14 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :test, :development do
+group :test do
   gem 'sqlite3'
 end
 
+group :development do
+  gem 'sqlite3'
+  gem 'web-console', '~> 2.0'
+end
 
 group :doc do
   gem 'sdoc', require: false
